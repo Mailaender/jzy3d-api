@@ -11,6 +11,7 @@
 
 	<artifactId>jzy3d-core</artifactId>
 	<name>Jzy3d Core</name>
+	<packaging>pom</packaging>
 
 	<dependencies>
 
@@ -52,6 +53,30 @@
 			<version>5.2.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 
 	</dependencies>
+
+	<build>
+		<plugins>
+		  <plugin>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>maven-bundle-plugin</artifactId>
+			<extensions>true</extensions>
+			<configuration>
+			  <instructions>
+				<Export-Package>org.jzy3d.*</Export-Package>
+				<Private-Package></Private-Package>
+				<Bundle-Activator></Bundle-Activator>
+			  </instructions>
+			</configuration>
+		  </plugin>
+		</plugins>
+	</build>
+
 </project>
